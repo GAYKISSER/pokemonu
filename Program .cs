@@ -101,17 +101,24 @@ namespace poc
                 $"{spesial_defense}  Скорость:{speed}");
             foreach (string item_skills in skills)
                 Console.WriteLine($"Умения:{item_skills} ");
+            Console.WriteLine();
         }
     }
+
 
 
     internal class Program
     {
         static void Main(string[] args)
         {
+            List<string> team = new List<string> { "Axew", "Haxorus" };
+            team.Add("Fraxure");
+
             pokemon_Axew _Axew = new pokemon_Axew("Axew", "dragon", 46, 87, 60, 30, 40, 57, new List<string> { "защита от камней", "Полёт", "Двойной урон" });
             pokemon_Fraxure _Fraxure = new pokemon_Fraxure("Fraxure", "dragon", 66, 117, 70, 40, 50, 67);
             pokemon_Haxorus _Haxorus = new pokemon_Haxorus("Haxorus", "dragon", 76, 147, 90, 60, 70, 97, new List<string> { "защита от огня" });
+            Console.WriteLine("В вашей комманде:");
+            foreach (var i in team) Console.WriteLine($"{i}");
         }
     }
 }
