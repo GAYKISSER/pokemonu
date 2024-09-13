@@ -55,7 +55,10 @@ namespace poc
                 hp = hp - yron;
             }
         }
-
+        void double_damage()
+        {
+            attack = attack * 2;
+        }
     }
 
     class pokemon_Fraxure : pocemon
@@ -78,13 +81,36 @@ namespace poc
         }
     }
 
+
+    class pokemon_Haxorus : pocemon
+    {
+        string tip;
+        string name;
+        public pokemon_Haxorus(string name, string tip, int hp, int attack, int defense, int spesial_attack, int spesial_defense, int speed, List<string> skills)
+        {
+            this.name = name;
+            this.tip = tip;
+            this.hp = hp;
+            this.attack = attack;
+            this.defense = defense;
+            this.spesial_attack = spesial_attack;
+            this.spesial_defense = spesial_defense;
+            this.speed = speed;
+            Console.WriteLine($"Имя:{name} Тип:{tip}  ХП:{hp}  Аттака:{attack}  Защита:{defense}  Спец атака:{spesial_attack}  Спец защита:" +
+                $"{spesial_defense}  Скорость:{speed}");
+            foreach (string item_skills in skills)
+                Console.WriteLine($"Умения:{item_skills} ");
+        }
+    }
+
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            pokemon_Axew _Axew = new pokemon_Axew("Axew", "dragon", 46, 87, 60, 30, 40, 57, new List<string> { "защита от камней", "Полёт" });
+            pokemon_Axew _Axew = new pokemon_Axew("Axew", "dragon", 46, 87, 60, 30, 40, 57, new List<string> { "защита от камней", "Полёт", "Двойной урон" });
             pokemon_Fraxure _Fraxure = new pokemon_Fraxure("Fraxure", "dragon", 66, 117, 70, 40, 50, 67);
-
+            pokemon_Haxorus _Haxorus = new pokemon_Haxorus("Haxorus", "dragon", 76, 147, 90, 60, 70, 97, new List<string> { "защита от огня" });
         }
     }
 }
