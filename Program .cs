@@ -100,6 +100,8 @@ namespace poc
             this.spesial_attack = spesial_attack;
             this.spesial_defense = spesial_defense;
             this.speed = speed;
+
+            hp = hp + 50;
             Console.WriteLine($"Имя:{name} Тип:{tip}  ХП:{hp}  Аттака:{attack}  Защита:{defense}  Спец атака:{spesial_attack}  Спец защита:" +
                 $"{spesial_defense}  Скорость:{speed}");
             foreach (string item_skills in skills)
