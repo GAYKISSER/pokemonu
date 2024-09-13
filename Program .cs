@@ -33,8 +33,8 @@ namespace poc
             this.spesial_attack = spesial_attack;
             this.spesial_defense = spesial_defense;
             this.speed = speed;
-
-
+            skills.RemoveAt(1);
+            skills.Insert(1, "Улучшенный полёт");
 
             Console.WriteLine($"Имя:{name} Тип:{tip}  ХП:{hp}  Аттака:{attack}  Защита:{defense}  Спец атака:{spesial_attack}  Спец защита:" +
                     $"{spesial_defense}  Скорость:{speed}");
@@ -60,6 +60,7 @@ namespace poc
         {
             attack = attack * 2;
         }
+
     }
 
     class pokemon_Fraxure : pocemon
@@ -76,6 +77,8 @@ namespace poc
             this.spesial_attack = spesial_attack;
             this.spesial_defense = spesial_defense;
             this.speed = speed;
+            hp = hp + 30;
+            attack = attack + 40;
             Console.WriteLine($"Имя:{name} Тип:{tip}  ХП:{hp}  Аттака:{attack}  Защита:{defense}  Спец атака:{spesial_attack}  Спец защита:" +
                 $"{spesial_defense}  Скорость:{speed} ");
             Console.WriteLine();
