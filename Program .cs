@@ -36,6 +36,8 @@ namespace poc
             skills.RemoveAt(1);
             skills.Insert(1, "Улучшенный полёт");
 
+
+            double_damage();
             Console.WriteLine($"Имя:{name} Тип:{tip}  ХП:{hp}  Аттака:{attack}  Защита:{defense}  Спец атака:{spesial_attack}  Спец защита:" +
                     $"{spesial_defense}  Скорость:{speed}");
             foreach (string item_skills in skills)
