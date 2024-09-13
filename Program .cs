@@ -40,6 +40,7 @@ namespace poc
                     $"{spesial_defense}  Скорость:{speed}");
             foreach (string item_skills in skills)
                 Console.WriteLine($"Умения:{item_skills} ");
+            Console.WriteLine();
 
         }
         void imyn_rock(int yron, string tipe_yron)
