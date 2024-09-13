@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pokemon
+namespace poc
 {
-
     public abstract class pocemon
     {
         public int hp;
@@ -21,9 +20,11 @@ namespace pokemon
         string tip;
         string name;
 
+        int hp_damage;
+        string tipe_hp_damage;
         public pokemon_Axew(string name, string tip, int hp, int attack, int defense, int spesial_attack, int spesial_defense, int speed, List<string> skills)
         {
-            List<string> skills = new List<string> skills { "Полёт"}
+            // List<string> skills = new List<string> skills { "Полёт"}
             this.name = name;
             this.tip = tip;
             this.hp = hp;
@@ -33,32 +34,56 @@ namespace pokemon
             this.spesial_defense = spesial_defense;
             this.speed = speed;
 
-            foreach (string item_skills in skills)
 
-                Console.WriteLine($"Имя:{name} Тип:{tip}  ХП:{hp}  Аттака:{attack}  Защита:{defense}  Спец атака:{spesial_attack}  Спец защита:" +
+
+            Console.WriteLine($"Имя:{name} Тип:{tip}  ХП:{hp}  Аттака:{attack}  Защита:{defense}  Спец атака:{spesial_attack}  Спец защита:" +
                     $"{spesial_defense}  Скорость:{speed}");
-            Console.WriteLine(item_skills);
+            foreach (string item_skills in skills)
+                Console.WriteLine($"Умения:{item_skills} ");
 
         }
         void imyn_rock(int yron, string tipe_yron)
         {
-            if (tipe_yron = "rock")
+            this.hp_damage = yron;
+            this.tipe_hp_damage = tipe_yron;
+            if (tipe_yron == "rock")
             {
-                hp - 0;
+                hp = hp - 0;
             }
             else
             {
-                hp - yron;
+                hp = hp - yron;
             }
         }
+
     }
 
+    class pokemon_Fraxure : pocemon
+    {
+        string tip;
+        string name;
+        public pokemon_Fraxure(string name, string tip, int hp, int attack, int defense, int spesial_attack, int spesial_defense, int speed)
+        {
+            this.name = name;
+            this.tip = tip;
+            this.hp = hp;
+            this.attack = attack;
+            this.defense = defense;
+            this.spesial_attack = spesial_attack;
+            this.spesial_defense = spesial_defense;
+            this.speed = speed;
+            Console.WriteLine($"Имя:{name} Тип:{tip}  ХП:{hp}  Аттака:{attack}  Защита:{defense}  Спец атака:{spesial_attack}  Спец защита:" +
+                $"{spesial_defense}  Скорость:{speed} ");
+            Console.WriteLine();
+        }
+    }
 
     internal class Program
     {
         static void Main(string[] args)
         {
-            pokemon_Axew _Axew = new pokemon_Axew("Axew", "dragon", 46, 87, 60, 30, 40, 57);
+            pokemon_Axew _Axew = new pokemon_Axew("Axew", "dragon", 46, 87, 60, 30, 40, 57, new List<string> { "защита от камней", "Полёт" });
+            pokemon_Fraxure _Fraxure = new pokemon_Fraxure("Fraxure", "dragon", 66, 117, 70, 40, 50, 67);
 
         }
     }
